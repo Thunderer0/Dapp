@@ -7,7 +7,8 @@ const useFetch = ({ keyword }) => {
 
   const fetchGifs = async () => {
     try {
-      const response = await fetch(`https://api.giphy.com/v1/gifs/search?api_key=x17m8grZqkN3FLxYCJuhyeJ20yCFf90T&q=${keyword.split(" ").join("")}&limit=1`);
+      const response = await fetch(`
+      https://api.giphy.com/v1/gifs/search?api_key=oKdgeW2YpMfzFMeabnu1cnsE6PLDR5so&q=${keyword.split(" ").join("")}&limit=1&offset=0&rating=g&lang=en`);
       const { data } = await response.json();
 
       setGifUrl(data[0]?.images?.downsized_medium.url);
